@@ -358,3 +358,9 @@
     }
   }
 }
+
+@mixin title-top-padding {
+  @media (max-width: $md) {
+    padding-top: 95px;
+  }
+}

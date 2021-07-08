@@ -8,7 +8,10 @@
   @include title($white, 118px, 6px, $width: auto);
   .title {
     padding: 0;
-    h1 {@include title-text(40px, 32px, 28px)}
+    h1 {
+      @include title-text(40px, 32px, 28px);
+      @include title-top-padding;
+    }
     p {margin-left: 1px}
   }
 

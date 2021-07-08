@@ -1571,6 +1571,11 @@ footer ul li a:hover {
     display: none;
   }
 }
+@media (max-width: 767px) {
+  .service-background_content .title h1 {
+    padding-top: 95px;
+  }
+}
 @media (max-width: 991px) {
   .service-background_content .title p {
     font-size: 18px;
@@ -1754,6 +1759,11 @@ footer ul li a:hover {
   }
   .team-background_content .title h1 br, .team-background_content .title h1 span {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .team-background_content .title h1 {
+    padding-top: 95px;
   }
 }
 .team-background_content .title p {
@@ -1982,6 +1992,11 @@ footer ul li a:hover {
     display: none;
   }
 }
+@media (max-width: 767px) {
+  .skills-background_content .title h1 {
+    padding-top: 95px;
+  }
+}
 @media (max-width: 991px) {
   .skills-background_content .title p {
     font-size: 18px;
@@ -2153,6 +2168,11 @@ footer ul li a:hover {
   }
   .portfolio-background_content .title h1 br, .portfolio-background_content .title h1 span {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .portfolio-background_content .title h1 {
+    padding-top: 95px;
   }
 }
 @media (max-width: 991px) {
@@ -2426,6 +2446,11 @@ footer ul li a:hover {
     display: none;
   }
 }
+@media (max-width: 767px) {
+  .about-background_content .title h1 {
+    padding-top: 95px;
+  }
+}
 .about-background_content .title p {
   margin-left: 1px;
 }
@@ -2656,6 +2681,11 @@ footer ul li a:hover {
   }
   .contact-background_content .title h1 br, .contact-background_content .title h1 span {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .contact-background_content .title h1 {
+    padding-top: 95px;
   }
 }
 .contact-background_content .title p {
