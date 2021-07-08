@@ -1,0 +1,152 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+.portfolio-background_content {
+  @include title(#393939, 119px, 6px, $width: auto);
+  background-color: $orange-light;
+  min-height: 1423px - $padding-bottom;
+  padding-bottom: $padding-bottom;
+
+  .title {
+    padding: 0;
+    h1 {@include title-text(40px, 32px, 28px)}
+    p {@include title-text(18px, 18px, 16px, 0)}
+  }
+
+  .portfolio-menu {
+    margin-inline: auto;
+    margin-top: 49px;
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding-left: 3px;
+      margin: 0;
+
+      li {
+        text-transform: uppercase;
+        padding-inline: 5px;
+
+        a {
+          @include a;
+          font-size: 18px;
+          line-height: 19px;
+          font-weight: 400;
+          letter-spacing: 0.02em;
+          color: #393939;
+          padding: 5px 27px 6px;
+          border-radius: 4px;
+          background-color: rgba(0, 0, 0, 0.07);
+          @include title-text(18px, 16px, 14px);
+          @include portfolio-menu(12px);
+
+          &:hover {
+            background-color: $white;
+          }
+        }
+      }
+
+      li:nth-child(2) {
+        a {
+          padding: 5px 21px 6px 25px;
+        }
+      }
+
+      li:nth-last-child(2) {
+        a {
+          padding: 5px 23px 6px 24px;
+        }
+      }
+
+      li:last-child {
+        a {
+          padding: 5px 20px 6px;
+        }
+      }
+    }
+  }
+
+  .portfolios {
+    @include no-row;
+    margin-top: 72px;
+
+    .portfolio {
+      padding: 0;
+      text-align: center;
+      margin-left: 6px;
+      margin-right: -15px;
+      margin-bottom: 44px;
+
+      p {
+        font-size: 18px;
+        line-height: 19px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: #393939;
+        margin-top: 26px;
+        margin-left: 4px;
+      }
+      @include media-img;
+    }
+
+    .portfolio:nth-child(2) {
+      img {
+        margin-top: 3px;
+      }
+
+      p {
+        margin-top: 23px;
+        margin-left: -6px;
+      }
+    }
+
+    .portfolio:nth-last-child(2) {
+      margin-left: 8px;
+
+      p {
+        margin-top: 25px;
+        margin-left: -22px;
+      }
+    }
+
+    .portfolio:last-child {
+      img {
+        margin-top: 1px;
+        margin-left: -2px;
+      }
+
+      p {
+        margin-top: 24px;
+        margin-left: 11px;
+      }
+    }
+  }
+
+  .button {
+    padding: 22px 53px 22px 58px;
+    color: $white;
+    background-color: $green-light;
+    border: none;
+    border-radius: 4px;
+    box-shadow: $button-shadow;
+    margin-top: 19px;
+    transform: translate(-50%, 0);
+    margin-left: calc(50% + 1px);
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+
+    &:active {
+      box-shadow: none;
+      padding: 20px 53px 20px 58px;
+      margin-top: 19px + 4px;
+    }
+    @include button;
+  }
+  @include portfolio;
+}

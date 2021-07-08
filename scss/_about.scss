@@ -1,0 +1,125 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+.about-background_content {
+  background-color: $purple;
+  min-height: 894px;
+  @include title($white, 118px, 6px, $width: auto);
+  .title {
+    padding: 0;
+    h1 {@include title-text(40px, 32px, 28px)}
+    p {margin-left: 1px}
+  }
+
+  .about-elements {
+    @include no-row;
+    margin-top: 65px;
+
+    .about-element {
+      display: flex;
+      align-items: flex-start;
+      margin-left: 6px;
+      margin-bottom: 141px;
+
+      .img {
+        img {
+          width: 96px;
+          height: 96px;
+          border-radius: 50%;
+        }
+      }
+
+      .about-text {
+        color: $white;
+        margin-left: 49px;
+        margin-top: 4px;
+
+        p:first-child {
+          margin: 0;
+          font-size: 21px;
+          line-height: 31px;
+          font-weight: 400;
+          font-style: italic;
+          letter-spacing: 0.034em;
+
+          span {
+            line-height: 32px;
+          }
+        }
+
+        h3 {
+          margin: 21px 0 0 0;
+          font-size: 24px;
+          line-height: 26px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.015em;
+        }
+
+        p:last-child {
+          margin: 1px 0 0 0;
+          font-size: 18px;
+          line-height: 26px;
+          color: $orange-light;
+          letter-spacing: 0.025em;
+        }
+      }
+    }
+
+    .about-element:nth-child(2) {
+      margin-left: 83px;
+
+      .about-text {
+        margin-left: 48px;
+        margin-right: -20px;
+
+        h3 {
+          margin-top: 22px;
+        }
+      }
+    }
+
+    .about-element:nth-last-child(2) {
+      margin-bottom: 0;
+
+      .about-text {
+        margin-left: 48px;
+        margin-right: -20px;
+
+        p:first-child {
+          letter-spacing: 0.036em;
+        }
+
+        h3 {
+          letter-spacing: 0.028em;
+          margin-top: 22px;
+        }
+
+        p:last-child {
+          margin-left: 1px;
+          letter-spacing: 0.02em;
+        }
+      }
+    }
+
+    .about-element:last-child {
+      margin-left: 84px;
+      margin-bottom: 0;
+
+      .about-text {
+        margin-left: 45px;
+        margin-right: -37px;
+
+        h3 {
+          letter-spacing: 0.025em;
+        }
+
+        p:last-child {
+          letter-spacing: 0.03em;
+        }
+      }
+    }
+    @include about;
+  }
+}

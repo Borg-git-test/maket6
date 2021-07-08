@@ -1,0 +1,99 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+.service-background_content {
+  @include title;
+  .title {
+    padding: 0;
+    h1 {@include title-text(40px, 32px, 28px)}
+    p {@include title-text(18px, 18px, 16px, 0)}
+  }
+
+  width: 100%;
+  background-color: $green-light;
+  min-height: 747px;
+  margin-top: 0;
+}
+
+.service-elements {
+  margin-top: 81px;
+  margin-inline: 0;
+
+  .service-element {
+    padding: 0;
+    margin-bottom: $padding-form;
+
+    .img {
+      display: flex;
+
+      img {
+        margin-left: 55%;
+        transform: translate(-50%, 0)
+      }
+    }
+
+    .element-text {
+      text-align: center;
+      color: $white;
+      margin-top: 61px;
+      padding-left: 15px;
+
+      h2 {
+        font-size: 24px;
+        line-height: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+
+      p {
+        margin: 22px auto;
+        width: 75%;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+
+        span {
+          letter-spacing: 0.1px;
+        }
+      }
+    }
+  }
+
+  .service-element:nth-child(2) {
+    margin-top: -5px;
+    margin-left: -3px;
+
+    .element-text {
+      margin-top: 56px;
+      padding-left: 12px;
+    }
+  }
+
+  .service-element:nth-last-child(2) {
+    margin-left: -18px;
+
+    .element-text {
+      margin-top: 59px;
+      padding-left: 37px;
+
+      p {
+        letter-spacing: 0.015em;
+        width: 80%;
+      }
+    }
+  }
+
+  .service-element:last-child {
+    margin-top: -17px;
+    margin-left: 9px;
+
+    .element-text {
+      margin-top: 55px;
+      padding-left: 9px;
+    }
+  }
+  @include service;
+}

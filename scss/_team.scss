@@ -1,0 +1,147 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+.team-background_content {
+  background-color: $cream;
+  min-height: 914px;
+  @include title($title-text, 119px, 5px, -27px, 47px, auto, 0.4px);
+  .title {
+    padding: 0;
+    h1 {@include title-text(40px, 32px, 28px)}
+    p {
+      @include title-text(18px, 18px, 16px, 0);
+      margin-left: -1px;
+    }
+  }
+}
+
+.team-elements {
+  @include no-row;
+  margin-top: 76px;
+
+  .team-element {
+    padding: 0;
+    margin-left: 8px;
+    margin-right: -13px;
+    text-align: center;
+
+    .img {
+      img {
+        margin: auto;
+        border-radius: 50%
+      }
+    }
+
+    .team-text {
+      margin-top: 37px;
+
+      h2 {
+        margin: 0;
+        font-size: 24px;
+        line-height: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: #27283d;
+      }
+
+      .text-link {
+        margin: 12px 0 0;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        color: #30bae7;
+
+        a {
+          @include a(#30bae7);
+          letter-spacing: 0.03em;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      p:last-child {
+        margin-top: 21px;
+        line-height: 24px;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        color: #3c4761;
+        margin-inline: auto;
+        width: 75%;
+      }
+    }
+
+    .team-link {
+      margin-top: 29px;
+      margin-bottom: $padding-form * 2;
+      display: flex;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        width: auto;
+        height: auto;
+
+        &:hover {
+          .link {
+            background-color: #878787;
+          }
+        }
+      }
+
+      .link {
+        background-color: #bdd1df;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 6px;
+      }
+
+      i, svg {
+        color: $white;
+        font-size: 17px;
+      }
+
+      .fa-facebook-f {
+        font-size: 15px;
+      }
+
+      .fa-twitter {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  .team-element:nth-child(2), .team-element:nth-last-child(2), .team-element:last-child {
+    .team-text {
+      .text-link {
+        margin: 13px 0 0;
+      }
+
+      p:last-child {
+        margin-top: 22px;
+        width: 73%;
+      }
+    }
+
+    .team-link {
+      margin-top: 29px - 2px;
+    }
+  }
+
+  .team-element:last-child {
+    .team-text {
+      margin-right: -11px;
+
+      p:last-child {
+        width: 71%;
+      }
+    }
+  }
+  @include team;
+}

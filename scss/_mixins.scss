@@ -1,0 +1,360 @@
+@import "variables";
+
+@mixin content {
+  max-width: 1140px;
+  margin-inline: auto;
+}
+
+@mixin a($color: $white) {
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin no-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@mixin title($color: $white, $top: 118px, $left: 4px, $line-top: -26px, $text-top: 44px, $width: 80%, $span: 1px) {
+  .title {
+    text-align: center;
+    color: $color;
+    margin-inline: auto;
+
+    h1 {
+      position: relative;
+      margin: 0;
+      padding-top: $top;
+      padding-left: $left;
+      font-size: 40px;
+      line-height: 29px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+
+      &:before {
+        position: absolute;
+        content: "";
+        width: 87px;
+        height: 4px;
+        background-color: rgba(0, 0, 0, 0.14);
+        transform: translate(-50%, 0);
+        bottom: $line-top;
+        left: 50%;
+        right: 50%;
+      }
+    }
+
+    p {
+      margin-inline: auto;
+      margin-top: $text-top;
+      width: $width;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0.02em;
+
+      span {
+        letter-spacing: $span;
+      }
+    }
+  }
+}
+
+@mixin menu($width) {
+  @media (max-width: $width) {
+    position: fixed;
+    background-color: $violet;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-inline: 25px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
+    .burger, .menu-background {
+      display: block;
+    }
+    .menu {
+      position: fixed;
+      top: -50%;
+      transition: all 0.5s ease 0s;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-color: $violet;
+      padding: 75px 0 0 0;
+      z-index: 4;
+      justify-content: center;
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+
+        li {
+          padding: 15px;
+        }
+      }
+
+      &.active {
+        top: 0;
+        transition: all 0.5s ease 0s;
+      }
+    }
+  }
+}
+@mixin header {
+  @media (max-width: $md) {
+    min-height: 450px;
+  }
+}
+
+@mixin button {
+  @media (max-width: $md) {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    transform: translate(0, 0);
+  }
+}
+
+@mixin title-text($ld-size: 32px, $md-size: 28px, $sm-size: 25px, $no-span: 1) {
+  @media (max-width: $lg) {
+    font-size: $ld-size;
+  }
+  @media (max-width: $md) {
+    font-size: $md-size;
+  }
+  @media (max-width: $sm) {
+    font-size: $sm-size;
+    padding-inline: $padding-inline;
+    @if ($no-span == 1) {
+      br, span {
+        display: none
+      }
+      line-height: 35px;
+    }
+  }
+}
+
+@mixin media-img {
+  @media (max-width: $xl) {
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+  @media (max-width: $md) {
+    img {
+      width: 85%;
+      height: auto;
+    }
+  }
+}
+
+@mixin container {
+  @media (max-width: $sm) {
+    .container {
+      padding: 0;
+    }
+  }
+}
+
+@mixin service {
+  @media (max-width: $md) {
+    justify-content: center;
+    .service-element, .service-element:nth-child(2), .service-element:nth-last-child(2), .service-element:last-child {
+      margin-left: 0;
+
+      .element-text {
+        padding: 0 0 0 0;
+      }
+    }
+  }
+}
+
+@mixin team {
+  @media (max-width: $xl) {
+    .team-element {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .team-element:nth-last-child(2) {
+      .team-text {
+        p:last-child {
+          width: 75%;
+        }
+      }
+    }
+    .team-element:last-child {
+      .team-text {
+        margin-right: 0;
+
+        p:last-child {
+          width: 72%;
+        }
+      }
+    }
+  }
+}
+
+@mixin skills {
+  @media (max-width: $xl) {
+    @include no-row;
+    .skill, .skill:nth-last-child(2), .skill:nth-child(2), .skill:last-child {
+      margin: 30px 0;
+      padding: 0;
+    }
+  }
+}
+
+@mixin portfolio-menu($small) {
+  @media (max-width: 400px) {
+    font-size: $small;
+  }
+}
+@mixin portfolio {
+  @media (max-width: $xl) {
+    min-height: 1000px;
+    .portfolios {
+      .portfolio, .portfolio:nth-child(2), .portfolio:nth-last-child(2), .portfolio:last-child {
+        margin-left: 0;
+        margin-right: 0;
+
+        img {
+          margin: 0
+        }
+
+        p {
+          margin-inline: 0
+        }
+      }
+    }
+  }
+}
+
+@mixin about {
+  @media (max-width: $xl) {
+    .about-element, .about-element:nth-child(2), .about-element:nth-last-child(2), .about-element:last-child {
+      margin: 50px 0;
+      padding-left: 0;
+      padding-right: 0;
+
+      .about-text {
+        margin-right: 0;
+        margin-left: 40px;
+      }
+    }
+  }
+  @media (max-width: $lg) {
+    .about-element:nth-child(2n) {
+      margin-left: auto;
+      text-align: right;
+
+      .img {
+        order: 1
+      }
+
+      .about-text {
+        margin-right: 40px;
+        margin-left: 0;
+      }
+    }
+  }
+  @media (max-width: $sm) {
+    .about-element, .about-element:nth-child(2), .about-element:nth-last-child(2), .about-element:last-child {
+      margin-left: 0;
+      margin-top: 0;
+      margin-right: 0;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+
+      .img {
+        padding: $padding-inline
+      }
+
+      .about-text {
+        padding-left: $padding-inline;
+        padding-right: $padding-inline;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    .about-element:nth-child(2n) {
+      text-align: center;
+
+      .img {
+        order: 0
+      }
+    }
+  }
+}
+
+@mixin contact-textarea {
+  @media (max-width: $lg) {
+    width: calc(100% - ((#{$padding-form} * 2) + (#{$border} * 2)));
+  }
+  @media (max-width: $sm) {
+    margin: 0 $margin-input ($margin-input * 2) $margin-input;
+    width: calc(100% - ((#{$padding-form} * 2) + (#{$margin-input} * 2) + (#{$border} * 2)));
+  }
+}
+@mixin input-textarea {
+  @media (max-width: $sm) {
+    max-width: 414px;
+    margin-top: 0;
+  }
+}
+@mixin contact-input {
+  @media (max-width: $lg) {
+    input {
+      width: calc(100% - ((#{$padding-form} * 2)));
+    }
+  }
+}
+@mixin contact {
+  @media (max-width: $lg) {
+    .place_input:first-child {
+      margin-right: 0;
+      margin-left: 0;
+
+      input {
+        margin-right: $margin-input;
+        margin-left: 0;
+        width: calc(100% - ((#{$padding-form} * 2) + #{$margin-input}));
+      }
+    }
+    .place_input:last-child {
+      margin-right: 0;
+      margin-left: 0;
+
+      input {
+        margin-right: 0;
+        margin-left: $margin-input;
+        width: calc(100% - ((#{$padding-form} * 2) + #{$margin-input}));
+      }
+    }
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    align-items: center;
+    .place_input:first-child, .place_input:last-child {
+      input {
+        margin: 0 $margin-input ($margin-input * 2) $margin-input;
+        width: calc(100% - ((#{$padding-form} * 2) + (#{$margin-input} * 2)));
+      }
+    }
+  }
+}
+
+@mixin footer {
+  @media (max-width: $xl) {
+    &, &:nth-child(2), &:nth-last-child(2) {
+      margin-inline: 20px;
+      width: 102px;
+      text-align: center;
+    }
+  }
+}

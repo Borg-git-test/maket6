@@ -1,0 +1,90 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+.skills-background_content {
+  @include title($title-text, 117px, 7px, -25px, 43px, $span: 0.6px);
+  background-color: $white;
+  min-height: 655px;
+
+  .title {
+    padding: 0;
+    h1 {@include title-text(40px, 32px, 28px)}
+    p {@include title-text(18px, 18px, 16px, 0)}
+  }
+
+  .skills {
+    .skill {
+      text-align: center;
+      margin-top: 59px;
+      margin-left: 53px;
+      margin-right: 2px;
+
+      .percent {
+        background: url("../compress_img/90.png") no-repeat center;
+        padding-block: 70px;
+
+        p {
+          margin: 3px 0 0 9px;
+          font-size: 50px;
+          line-height: 20px;
+          font-weight: 300;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+          color: #3c4761;
+
+          span {
+            font-size: 32px;
+          }
+        }
+      }
+
+      .percent-text {
+        margin-top: 26px;
+        padding-left: 1px;
+        font-size: 24px;
+        line-height: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: #3c4761;
+
+        span {
+          margin-right: 1px;
+          margin-left: -1px;
+        }
+      }
+    }
+
+    .skill:nth-child(2) {
+      .percent {
+        background: url("../compress_img/75.png") no-repeat center;
+      }
+    }
+
+    .skill:nth-last-child(2) {
+      margin-left: 52px;
+      margin-right: 3px;
+
+      .percent {
+        background: url("../compress_img/70.png") no-repeat center;
+      }
+
+      .percent-text {
+        padding-left: 3px;
+      }
+    }
+
+    .skill:last-child {
+      .percent {
+        background: url("../compress_img/85.png") no-repeat center;
+      }
+
+      .percent-text {
+        padding-left: 0;
+      }
+    }
+    @include skills;
+  }
+}
+

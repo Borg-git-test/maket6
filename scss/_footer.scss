@@ -1,0 +1,42 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+footer {
+  min-height: 112px;
+  width: 100%;
+  background-color: $blue;
+
+  ul {
+    padding-top: 42px;
+    padding-left: 1px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+
+    li {
+      margin-inline: 27px;
+      margin-bottom: $padding-form;
+
+      &:nth-child(2), &:nth-last-child(2) {
+        margin-left: 28px;
+        margin-right: 29px;
+      }
+
+      a {
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        @include a;
+
+        &:hover {
+          color: $blue-button;
+        }
+      }
+      @include footer;
+    }
+  }
+}
